@@ -1,11 +1,41 @@
 .heading {
-  color: darkblue;
+  color: pink;
   font-size: 15px;
-  transition: color 0.5s, font-size 1s, letter-spacing 10s;
+  transition: all 1s ease-in 1s;
+  /* all 4 can be combined into one property "transition" the property is first, can be all or font-size, then duration, then time function then delay */
+  /* transition: font-size 0.5s ease-in 1s */
+
+  /* transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: ease-in;
+  transition-delay: 1s; */
 }
 
 .heading:hover {
+  font-size: 10px;
   color: green;
-  font-size: 20px;
-  letter-spacing: 10px;
+}
+
+/* ah so the animation name is grow and keyframes then dictates that.  Interesting thing for css */
+.box {
+  width: 50px;
+  height: 50px;
+  background: red;
+  border: 1px solid black;
+  animation-name: first-animation;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-iteration-count: 4;
+  /* how many times the animation runs can be infinite to run forever */
+  animation-timing-function: ease-in;
+  animation-direction: alternate;
+  /* other properties are alternate, from normal to reverse and vice versa.  Alternate reverse, starts from finish to to */
+  animation-fill-mode: both;
+  /* When finished, what should it look like basically, forwards means once animation is finished go back to the beginning look.  Both basically does both and if you are oscillating it finishes wherever it finishes correctly */
+}
+
+@keyframes first-animation {
+  from {width: 100px; height: 100px; background: green; }
+  to {width: 10px; height: 10px; background: yellow}
+
 }
